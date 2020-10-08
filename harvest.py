@@ -95,7 +95,7 @@ class Melon(object):
         self.field = field
         self.harvester = harvester
     
-    def is_sellable():
+    def is_sellable(self):
         return self.shape_rating > 5 and self.color_rating > 5 and self.field != 3
 
 
@@ -123,8 +123,13 @@ def make_melons(melon_types):
 
 def get_sellability_report(melons):
     """Given a list of melon object, prints whether each one is sellable."""
+    
+    for melon in melons:
+        if melon.is_sellable():
+            print(f"Harvested by {melon.harvester} from Field {melon.field}, (CAN BE SOLD)")
+        else:
+            print(f"Harvested by {melon.harvester} from Field {melon.field}, (NOT SELLABLE)")
 
-    # Fill in the rest 
 
 
 
